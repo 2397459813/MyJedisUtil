@@ -225,7 +225,7 @@ public class MyRedisTest {
 	
 	@Test
 	public void zrevrange() throws Exception{
-		LOGGER.info("²âÊÔzrevrange------>start");
+		LOGGER.info("²âÊÔzrevrange------======>start");
 		Set<String> result  = service.zrevrange("myzset",1,2);
 		LOGGER.info("²âÊÔzrevrange½á¹û=[{}]",result);
 	}
