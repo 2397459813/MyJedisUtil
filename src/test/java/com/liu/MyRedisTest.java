@@ -225,7 +225,8 @@ public class MyRedisTest {
 	
 	@Test
 	public void zrevrange() throws Exception{
-		LOGGER.info("测试zrevrange------======************8>start");
+		LOGGER.info("测试zrevrange------======************master提交代码>start");
+		LOGGER.info("master提交代码");
 		Set<String> result  = service.zrevrange("myzset",1,2);
 		LOGGER.info("测试zrevrange结果=[{}]",result);
 	}
