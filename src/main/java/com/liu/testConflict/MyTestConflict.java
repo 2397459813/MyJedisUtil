@@ -27,7 +27,7 @@ public class MyTestConflict {
 	
 	
 	public static void testLua2() {
-		Jedis jedis = RedisUtil.getJedis();
+		Jedis jedis = RedisUtil.getJedis();//*******************************************************
 		List<String> keys = new ArrayList<>();
 		List<String> vals = new ArrayList<>();
 		keys.add("name");

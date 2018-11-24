@@ -28,9 +28,9 @@ public class TestLua {
 		Jedis jedis = RedisUtil.getJedis();
 		List<String> keys = new ArrayList<>();
 		List<String> vals = new ArrayList<>();
-		keys.add("name1");
+		keys.add("name1111111111111111*************************");
 		keys.add("foo");
-		keys.add("foo123456789");
+		keys.add("foo1***************************************8*******");
 		//好处：这样可以缓存到服务器，不用每次把lua脚本的内容传过去
 		String lua = "local tab={}  for i=1,#KEYS do  tab[i] = redis.call('get',KEYS[i]) end return tab";
 		String scriptLoad = jedis.scriptLoad(lua);
