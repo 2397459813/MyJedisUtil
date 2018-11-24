@@ -23,13 +23,13 @@ public class TestLua {
 		System.out.println(jedis.get("lua"));//查看执行情况
 	}
 	
-	
+	//添加了一行注释
 	public static void testLua2() {
 		Jedis jedis = RedisUtil.getJedis();
 		List<String> keys = new ArrayList<>();
 		List<String> vals = new ArrayList<>();
-		keys.add("name");
-		keys.add("foo");
+		keys.add("name1");
+		keys.add("foo1");
 		//好处：这样可以缓存到服务器，不用每次把lua脚本的内容传过去
 		String lua = "local tab={}  for i=1,#KEYS do  tab[i] = redis.call('get',KEYS[i]) end return tab";
 		String scriptLoad = jedis.scriptLoad(lua);
