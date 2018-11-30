@@ -2,6 +2,7 @@ package com.liu.sentinel;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.apache.log4j.Logger;
@@ -16,7 +17,8 @@ public class TestSentinel {
 
 	public static void main(String[] args) {
 		
-		String result = getJedis().get("name");
+		Map<String, String> result = getJedis().hgetAll("myhash");
+		
 		logger.info("RedisÉÚ±øget·½·¨:"+result);
 		
 	}
