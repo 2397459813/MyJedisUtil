@@ -18,8 +18,9 @@ public class TestSentinel {
 	public static void main(String[] args) {
 		
 		Map<String, String> result = getJedis().hgetAll("myhash");
+		String result1 = getJedis().get("foo");
 		
-		logger.info("Redis哨兵get方法:"+result);
+		logger.info("Redis哨兵get方法:"+result+"====="+result1);
 		
 	}
 	
@@ -37,7 +38,7 @@ public class TestSentinel {
 	
 	public static JedisSentinelPool getJedisPool() {
 		if (JEDIS_POOL == null) {
-			synchronized (RedisUtil.class) {
+			synchronized (TestSentinel.class) {
 				if (JEDIS_POOL == null) {
 					GenericObjectPoolConfig config = new GenericObjectPoolConfig();
 					// 最大空闲连接数, 默认8个 控制一个pool最多有多少个状态为idle(空闲的)的jedis实例。
