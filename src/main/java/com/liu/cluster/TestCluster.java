@@ -51,7 +51,7 @@ public class TestCluster {
 			        jedisPoolConfig.setMaxWaitMillis(5000); // 设置5秒
 			        //对拿到的connection进行validateObject校验
 			        jedisPoolConfig.setTestOnBorrow(true);
-			        JEDIS_POOL = new JedisCluster(hostAndPortsSet, 5000,5000,200,"***************",jedisPoolConfig);
+			        JEDIS_POOL = new JedisCluster(hostAndPortsSet, 5000,5000,200,"**********",jedisPoolConfig);
 				}
 			}
 		}
@@ -232,7 +232,7 @@ public class TestCluster {
 	    /***
 	     * 散列
 	     */
-	   
+	    @Test
 	    public void testHash() {
 	    	JedisCluster jedis = getJedisPool();
 	        Map<String,String> map = new HashMap<String,String>();
@@ -293,7 +293,7 @@ public class TestCluster {
 	     * redis.clients.jedis.exceptions.JedisClusterException:
 	     *  No way to dispatch this command to Redis Cluster because keys have different slots.
 	     */
-	    @Test
+	   
 		   public void testKeys()throws InterruptedException{
 			   
 			   System.out.println("获取所有的key："+getJedisPool().mget("username","name"));
